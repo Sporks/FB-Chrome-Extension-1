@@ -20,7 +20,7 @@
                "http://*/*",
                "https://*/*"
            ],
-			"js": ["bower_components/jquery/dist/jquery.min.js", "content.js", "action.js"]
+			"js": ["bower_components/jquery/dist/jquery.min.js", "action.js"]
 
 		}
 	],
