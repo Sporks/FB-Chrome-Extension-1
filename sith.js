@@ -7,7 +7,7 @@ for (var i = 0; i < elements.length; i++) {
         console.log(element.value)
         if (node.nodeType === 3) {
             var text = node.nodeValue;
-            var replacedText = text.replace(/facebook/gi, "Sithbook");
+            var replacedText = text.replace(/jedibook/gi, "Sithbook");
 
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
