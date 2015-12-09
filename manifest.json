@@ -1,21 +1,33 @@
 {
-	"manifest_version": 2,
+   "manifest_version": 2,
 
-	"name": "Star Wars Theme",
-	"version": "0.01",
+   "name": "Star Wars Theme",
+   "version": "0.01",
 
-	"browser_action": {
-		"default_icon": {
-			"19": "icon-19.png",
-			"38": "icon-38.png"
-			},
-		"tooltip": "StarWars Mode!"
-	},
-	"permissions":[ 
+   "browser_action": {
+      "default_icon": {
+         "19": "icon-19.png",
+         "38": "icon-38.png"
+      },
+      "tooltip": "StarWars Mode!"
+   },
+   "permissions": [
 		"activeTab"
 	],
-	"background": {
-		"scripts": ["action.js"]
-	}
-	
+   "background": {
+      "scripts": ["action.js"]
+   },
+   "content_scripts": [
+      {
+         "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+         "js": [
+                "bower_components/jquery/dist/jquery.js", "content.js"
+            ],
+         "run_at": "document_end"
+        }
+    ]
+
 }
