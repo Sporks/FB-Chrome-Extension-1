@@ -1,17 +1,21 @@
 {
-   "manifest_version": 2,
-   "name": "FB Star Wars Theme",
-   "description": "Change facebook page to Star Wars Themes",
-   "version": "0.0.1",
-   "content_scripts": [
-      {
-         "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-         "js": ["bower_components/jquery/dist/jquery.min.js",
-                "content.js"],
-         "run_at": "document_end"
-        }
-    ]
+	"manifest_version": 2,
+
+	"name": "Star Wars Theme",
+	"version": "0.01",
+
+	"browser_action": {
+		"default_icon": {
+			"19": "icon-19.png",
+			"38": "icon-38.png"
+			},
+		"tooltip": "StarWars Mode!"
+	},
+	"permissions":[ 
+		"activeTab"
+	],
+	"background": {
+		"scripts": ["action.js"]
+	}
+	
 }
