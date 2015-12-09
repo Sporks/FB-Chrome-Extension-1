@@ -1,7 +1,10 @@
-var facebook_Nav_Bar = document.getElementById('pagelet_bluebar');
+$(document).ready(function () {
+   var fb_nav_class = document.getElementById('blueBarNAXAnchor');
 
-var facebook_Left_Side_Column = document.getElementById('leftCol');
+   var searchFacebook = document.getElementsByName('q')[0];
 
-var status_Update_Area = document.getElementById('pagelet_composer');
+   searchFacebook.placeholder = 'Search JediBook';
 
-alert('HI MOM!')
+   fb_nav_class.style.backgroundImage = "linear-gradient(rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%)";
+
+});
