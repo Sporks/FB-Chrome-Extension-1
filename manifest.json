@@ -9,9 +9,8 @@
                 "http://*/*",
                 "https://*/*"
             ],
-         "js": [
-                "content.js"
-            ],
+         "js": ["bower_components/jquery/dist/jquery.min.js",
+                "content.js"],
          "run_at": "document_end"
         }
     ]
