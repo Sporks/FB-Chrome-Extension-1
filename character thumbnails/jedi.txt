@@ -1,0 +1,13 @@
+C-3PO_droid.png
+Chewbacca.jpeg
+Han_Solo.jpeg
+Lando.jpeg
+Leia.jpeg
+Luke_SkyWalker.jpeg
+Naboo.jpeg
+Obi-Wan.jpeg
+Qui-Gon.jpeg
+Sabe.jpeg
+Windu.jpeg
+Yoda.jpeg
+r2d2.jpeg
