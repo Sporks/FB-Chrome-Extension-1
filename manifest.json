@@ -20,7 +20,7 @@
                "http://*/*",
                "https://*/*"
            ],
-			"js": ["bower_components/jquery/dist/jquery.min.js", "action.js"]
+			"js": ["bower_components/underscore/underscore-min.js", "bower_components/jquery/dist/jquery.min.js", "action.js"]
 
 		}
 	],

@@ -2,7 +2,6 @@ var placehold = document.getElementsByName('q')[0];
 placehold.placeholder = 'Search Jedibook';
 
 var elements = document.getElementsByTagName('*');
-var fb_nav_class = document.getElementById('blueBarNAXAnchor');
 for (var i = 0; i < elements.length; i++) {
    var element = elements[i];
    for (var j = 0; j < element.childNodes.length; j++) {
@@ -17,25 +16,75 @@ for (var i = 0; i < elements.length; i++) {
       }
    }
 }
-fb_nav_class.style.backgroundImage = "linear-gradient(rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%)"
+
+//
+var fb_nav_class = document.getElementById('blueBarNAXAnchor');
+fb_nav_class.style.backgroundImage = "linear-gradient(rgba(55,132,214,1) 0%,rgba(0,0,0,1) 30%,rgba(0,0,0,1) 47%,rgba(0,0,0,1) 71%,rgba(55,132,214,1) 100%)"
 
 // "What's on your mind"
 var status_Text_Placeholder = document.getElementById('u_0_y');
 status_Text_Placeholder.placeholder = "Try not. Do… or do not. There is no try.";
 
 
-//targets all images on the main page
+
+
+
+var updateImages = _.throttle(function(){
+   
+      var counter = 0;
 var arrayOfImageTags = document.getElementsByClassName('_38vo');
+
+arrayOfImageTags[0].firstChild.src = "https://vignette3.wikia.nocookie.net/swfans/images/3/3d/LukeSkywalker.png/revision/latest?cb=20131122020255";
+
+   
 for (var key in arrayOfImageTags) {
-
-   if (arrayOfImageTags[0]) {
-      arrayOfImageTags[key].firstChild.src = 'http://cdn.bgr.com/2015/08/darth-vader.jpg'
-   } else {
-      arrayOfImageTags[key].firstChild.src = 'http://webmaster.ypsa.org/wp-content/uploads/2012/08/no_thumb.jpg'
+   if (counter && !arrayOfImageTags[key].firstChild.src.startsWith('http://sporks.net/')) {
+      arrayOfImageTags[key].firstChild.src = getRandomStarWarsCharacter()
    }
+   counter++;
+};
+      
+      
+   }, 1000);
+////////////////////////////////////////////////////////
+$(document).on('DOMNodeInserted', function(e) {
+   
+   
+   updateImages();
+   
+   
+      //element with #someID was inserted.
+    });
+
+
+
+ $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'https://www.twixxies.com/css/jedi.css') );
+
+
+
+
+//targets all images on the main page
+
+
+
+
+function getRandomStarWarsCharacter() {
+   var jedis = ['http://sporks.net/codesmith/hackathon1/C-3PO_droid.png',
+'http://sporks.net/codesmith/hackathon1/Chewbacca.jpeg',
+'http://sporks.net/codesmith/hackathon1/Han_Solo.jpeg',
+'http://sporks.net/codesmith/hackathon1/Lando.jpeg',
+'http://sporks.net/codesmith/hackathon1/Leia.jpeg',
+'http://sporks.net/codesmith/hackathon1/Luke_SkyWalker.jpeg',
+'http://sporks.net/codesmith/hackathon1/Naboo.jpeg',
+'http://sporks.net/codesmith/hackathon1/Obi-Wan.jpeg',
+'http://sporks.net/codesmith/hackathon1/Qui-Gon.jpeg',
+'http://sporks.net/codesmith/hackathon1/r2d2.jpeg',
+'http://sporks.net/codesmith/hackathon1/Sabe.jpeg',
+   ];
+
+   var i = Math.floor(Math.random() * 9) + 1;
+   return jedis[i];
 }
-
-
 
 
 // };
