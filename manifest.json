@@ -20,9 +20,10 @@
                "http://*/*",
                "https://*/*"
            ],
-			"js": ["bower_components/jquery/dist/jquery.min.js", "action.js"]
-
+			"js": ["bower_components/jquery/dist/jquery.min.js", "action.js"],
+			 "run_at": "document_end"
 		}
+
 	],
 	"background": {
 		"scripts": ["action.js"],

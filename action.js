@@ -7,17 +7,27 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		chrome.browserAction.setBadgeText({text: "J"});
 		chrome.browserAction.setBadgeBackgroundColor({ color: [0, 0, 255, 255] });
 		chrome.tabs.executeScript(null, {file: "jedi.js"});
+		// keepLoading(jedi);
 	}
 	else if(state === 2){
 		chrome.browserAction.setBadgeText({text: "S"});
 		chrome.browserAction.setBadgeBackgroundColor({ color: [255,0,0,255]});
 		chrome.tabs.executeScript(null, {file: "sith.js"});
+		// keepLoading(sith);
 	}
 						//have the state cycle between 0 and 2
 	else if(state === 0){
 		chrome.browserAction.setBadgeText({text: ""});	
 	 	chrome.browserAction.setBadgeBackgroundColor({color: [0,0,255,0]});
-	 	faction = "Facebook";
+	 	chrome.tabs.executeScript(null, {file: "facebook.js"});
 	}
-	changeFacebookText(faction);
-})
+	// changeFacebookText(faction);
+});
+
+function keepLoading(faction){
+	setInterval(function(){
+		alert("set once");
+		// 
+	}
+		, 1000)
+}
